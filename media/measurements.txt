@@ -1,0 +1,77 @@
+{
+  "base_ref": "3c5c8b245359b9b8e913a47f97211f2a3426f149",
+  "change": "Agent recent work rendering only; existing API pagination retained",
+  "fixture": "1000 synthetic terminal runs, 200 runs per API page, 50 Show more clicks",
+  "measurements": [
+    {
+      "baseline": true,
+      "compact": false,
+      "revealed_rows": 1000,
+      "mounted_rows": 1000,
+      "max_mounted_while_scrolling": 1000,
+      "task_pages": [
+        "first",
+        "200",
+        "400",
+        "600",
+        "800"
+      ],
+      "errors": [],
+      "unexpected_requests": []
+    },
+    {
+      "baseline": true,
+      "compact": true,
+      "revealed_rows": 1000,
+      "mounted_rows": 1000,
+      "max_mounted_while_scrolling": 1000,
+      "task_pages": [
+        "first",
+        "200",
+        "400",
+        "600",
+        "800"
+      ],
+      "errors": [],
+      "unexpected_requests": []
+    },
+    {
+      "baseline": false,
+      "compact": false,
+      "revealed_rows": 1000,
+      "mounted_rows": 30,
+      "max_mounted_while_scrolling": 32,
+      "task_pages": [
+        "first",
+        "200",
+        "400",
+        "600",
+        "800"
+      ],
+      "errors": [],
+      "unexpected_requests": []
+    },
+    {
+      "baseline": false,
+      "compact": true,
+      "revealed_rows": 1000,
+      "mounted_rows": 29,
+      "max_mounted_while_scrolling": 31,
+      "task_pages": [
+        "first",
+        "200",
+        "400",
+        "600",
+        "800"
+      ],
+      "errors": [],
+      "unexpected_requests": []
+    }
+  ],
+  "notes": [
+    "Production Web renderer shared with Desktop; Electron main process not exercised.",
+    "Counts measure mounted rows, not a general FPS or backend throughput benchmark.",
+    "Only synthetic HTTP and WebSocket boundaries; all non-local requests blocked.",
+    "Video uses original speed on both sides and holds the final frame on the shorter side."
+  ]
+}
